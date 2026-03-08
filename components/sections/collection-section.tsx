@@ -5,23 +5,23 @@ import { FadeImage } from "@/components/fade-image";
 const accessories = [
   {
     id: 1,
-    name: "Compact Model",
-    description: "120m² living space with optimal energy efficiency",
-    price: "$285,000",
+    name: "Residência Compacta",
+    description: "120m² de área útil com eficiência energética otimizada",
+    price: "Projeto Conceitual",
     image: "/images/hero-side-1.png",
   },
   {
     id: 2,
-    name: "Standard Model",
-    description: "180m² perfect balance of space and sustainability",
-    price: "$395,000",
+    name: "Habitação Contemporânea",
+    description: "180m² equilíbrando amplitude e sustentabilidade",
+    price: "Projeto Executivo",
     image: "/images/hero-side-2.png",
   },
   {
     id: 3,
-    name: "Premium Model",
-    description: "250m² expansive design with maximum comfort",
-    price: "$525,000",
+    name: "Complexo Residencial",
+    description: "250m² de design expansivo com máximo conforto",
+    price: "Projeto Premiado",
     image: "/images/hero-side-4.png",
   },
 ];
@@ -32,7 +32,7 @@ export function CollectionSection() {
       {/* Section Title */}
       <div className="px-6 py-20 md:px-12 lg:px-20 md:py-10">
         <h2 className="text-3xl font-medium tracking-tight text-foreground md:text-4xl">
-          Surface Options
+          Projetos em Destaque
         </h2>
       </div>
 

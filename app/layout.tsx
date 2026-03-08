@@ -7,8 +7,8 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'EVASION',
-  description: 'High-performance outdoor gear engineered for the modern explorer. Lightweight, durable, adventure-ready.',
+  title: 'Lara Armangni — Portfólio de Arquitetura',
+  description: 'Portfólio de arquitetura de Lara Armangni, estudante do 3º ano de Arquitetura e Urbanismo na Unifil, Londrina. Projetos autorais com foco em sustentabilidade e estética contemporânea.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />

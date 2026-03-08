@@ -4,22 +4,22 @@ import Link from "next/link";
 
 const footerLinks = {
   explore: [
-    { label: "Products", href: "#products" },
-    { label: "Technology", href: "#technology" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Accessories", href: "#accessories" },
+    { label: "Projetos", href: "#products" },
+    { label: "Processo", href: "#technology" },
+    { label: "Galeria", href: "#gallery" },
+    { label: "Trabalhos", href: "#accessories" },
   ],
   about: [
-    { label: "Our Story", href: "#" },
-    { label: "Team", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Sobre Mim", href: "#" },
+    { label: "Formação", href: "#" },
+    { label: "Experiência", href: "#" },
+    { label: "Contato", href: "#" },
   ],
   service: [
-    { label: "FAQ", href: "#" },
-    { label: "Shipping", href: "#" },
-    { label: "Returns", href: "#" },
-    { label: "Warranty", href: "#" },
+    { label: "CV", href: "#" },
+    { label: "Publicações", href: "#" },
+    { label: "Parcerias", href: "#" },
+    { label: "Premiações", href: "#" },
   ],
 };
 
@@ -35,13 +35,13 @@ export function FooterSection() {
               MONO
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Sustainable design homes combining contemporary aesthetics with energy efficiency and eco-friendly materials.
+              Portfólio de arquitetura e urbanismo. Projetos contemporâneos com foco em sustentabilidade, estética e funcionalidade.
             </p>
           </div>
 
           {/* Explore */}
           <div>
-            <h4 className="mb-4 text-sm font-medium text-foreground">Explore</h4>
+            <h4 className="mb-4 text-sm font-medium text-foreground">Explorar</h4>
             <ul className="space-y-3">
               {footerLinks.explore.map((link) => (
                 <li key={link.label}>
@@ -58,7 +58,7 @@ export function FooterSection() {
 
           {/* About */}
           <div>
-            <h4 className="mb-4 text-sm font-medium text-foreground">About</h4>
+            <h4 className="mb-4 text-sm font-medium text-foreground">Sobre</h4>
             <ul className="space-y-3">
               {footerLinks.about.map((link) => (
                 <li key={link.label}>
@@ -75,7 +75,7 @@ export function FooterSection() {
 
           {/* Service */}
           <div>
-            <h4 className="mb-4 text-sm font-medium text-foreground">Service</h4>
+            <h4 className="mb-4 text-sm font-medium text-foreground">Links</h4>
             <ul className="space-y-3">
               {footerLinks.service.map((link) => (
                 <li key={link.label}>
@@ -96,10 +96,10 @@ export function FooterSection() {
       <div className="border-t border-border px-6 py-6 md:px-12 lg:px-20">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            2026 MONO. All rights reserved.
+            2026 Lara Armangni. Todos os direitos reservados.
           </p>
 
-          
+
 
           {/* Social Links */}
           <div className="flex items-center gap-4">

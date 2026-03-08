@@ -3,30 +3,30 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const word = "MONO";
+
 
 const sideImages = [
   {
     src: "/images/hero-side-1.png",
-    alt: "Modern architecture with corten steel",
+    alt: "Arquitetura moderna com estrutura em aço corten",
     position: "left",
     span: 1,
   },
   {
     src: "/images/hero-side-2.png",
-    alt: "Aerial view of modern home",
+    alt: "Vista aérea de residência contemporânea",
     position: "left",
     span: 1,
   },
   {
     src: "/images/hero-side-3.png",
-    alt: "Interior view with landscape",
+    alt: "Vista interna com integração à paisagem",
     position: "right",
     span: 1,
   },
   {
     src: "/images/hero-side-4.png",
-    alt: "Modern architecture at night",
+    alt: "Arquitetura contemporânea ao entardecer",
     position: "right",
     span: 1,
   },
@@ -39,18 +39,18 @@ export function HeroSection() {
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
-      
+
       const rect = sectionRef.current.getBoundingClientRect();
       const scrollableHeight = window.innerHeight * 2;
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
-      
+
       setScrollProgress(progress);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -58,10 +58,10 @@ export function HeroSection() {
 
   // Text fades out first (0 to 0.2)
   const textOpacity = Math.max(0, 1 - (scrollProgress / 0.2));
-  
+
   // Image transforms start after text fades (0.2 to 1)
   const imageProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.8));
-  
+
   // Smooth interpolations - More balanced distribution
   const centerWidth = 100 - (imageProgress * 80); // 100% to 20% (same as each side image)
   const centerHeight = 100; // Always 100% height
@@ -71,7 +71,7 @@ export function HeroSection() {
   const sideTranslateRight = 100 - (imageProgress * 100); // 100% to 0%
   const borderRadius = 0; // No border radius
   const gap = imageProgress * 8; // 0px to 8px
-  
+
   // Vertical offset for side columns to move them up on mobile
   const sideTranslateY = -(imageProgress * 15); // Move up by 15% when fully expanded
 
@@ -81,13 +81,13 @@ export function HeroSection() {
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="flex h-full w-full items-center justify-center">
           {/* Bento Grid Container */}
-          <div 
+          <div
             className="relative flex h-full w-full items-stretch justify-center"
             style={{ gap: `${gap}px` }}
           >
-            
+
             {/* Left Column */}
-            <div 
+            <div
               className="flex h-full flex-row will-change-transform"
               style={{
                 width: `${sideWidth}%`,
@@ -97,8 +97,8 @@ export function HeroSection() {
               }}
             >
               {sideImages.filter(img => img.position === "left").map((img, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="relative h-full overflow-hidden will-change-transform"
                   style={{
                     flex: img.span,
@@ -116,7 +116,7 @@ export function HeroSection() {
             </div>
 
             {/* Main Hero Image - Center */}
-            <div 
+            <div
               className="relative overflow-hidden will-change-transform"
               style={{
                 width: `${centerWidth}%`,
@@ -125,31 +125,28 @@ export function HeroSection() {
                 borderRadius: `${borderRadius}px`,
               }}
             >
-              {/* Text Behind - Fades out first */}
-              <div 
-                className="absolute inset-0 z-0 flex items-center justify-center"
-                style={{ opacity: textOpacity, transform: 'translateY(-200px)' }}
+              {/* Text in Front - Fades out on scroll */}
+              <div
+                className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-1"
+                style={{ opacity: textOpacity }}
               >
-                <h1 className="whitespace-nowrap text-[35vw] font-bold leading-[0.8] tracking-tighter text-black">
-                  {word.split("").map((letter, index) => (
-                    <span
-                      key={index}
-                      className="inline-block animate-[slideUp_0.8s_ease-out_forwards] opacity-0"
-                      style={{
-                        animationDelay: `${index * 0.08}s`,
-                        transition: 'all 1.5s',
-                        transitionTimingFunction: 'cubic-bezier(0.86, 0, 0.07, 1)',
-                      }}
-                    >
-                      {letter}
-                    </span>
-                  ))}
+                <p
+                  className="animate-[slideUp_0.6s_ease-out_forwards] opacity-0 whitespace-nowrap text-[1.6vw] font-light tracking-[0.5em] uppercase text-black"
+                  style={{ animationDelay: '0s' }}
+                >
+                  portfolio
+                </p>
+                <h1
+                  className="animate-[slideUp_0.8s_ease-out_forwards] opacity-0 whitespace-nowrap text-[8vw] font-bold leading-[0.9] tracking-tight text-black"
+                  style={{ animationDelay: '0.15s' }}
+                >
+                  Lara Armangni
                 </h1>
               </div>
-              
+
               <Image
                 src="/images/hero-mono.png"
-                alt="Modern architectural structure with reflection"
+                alt="Estrutura arquitetônica moderna com reflexo"
                 fill
                 className="absolute inset-0 z-10 object-cover"
                 priority
@@ -157,7 +154,7 @@ export function HeroSection() {
             </div>
 
             {/* Right Column */}
-            <div 
+            <div
               className="flex h-full flex-row will-change-transform"
               style={{
                 width: `${sideWidth}%`,
@@ -167,8 +164,8 @@ export function HeroSection() {
               }}
             >
               {sideImages.filter(img => img.position === "right").map((img, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="relative h-full overflow-hidden will-change-transform"
                   style={{
                     flex: img.span,
@@ -190,14 +187,14 @@ export function HeroSection() {
       </div>
 
       {/* Tagline Section - Fixed at bottom */}
-      <div 
+      <div
         className="pointer-events-none fixed bottom-0 left-0 right-0 z-10 px-6 pb-12 md:px-12 md:pb-16 lg:px-20 lg:pb-20"
         style={{ opacity: textOpacity }}
       >
         <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed text-white md:text-3xl lg:text-[2.5rem] lg:leading-snug">
-          Lightweight, durable
+          Forma,
           <br />
-          and adventure-ready.
+          função e beleza.
         </p>
       </div>
 

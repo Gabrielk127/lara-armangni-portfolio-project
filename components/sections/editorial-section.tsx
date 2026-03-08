@@ -3,10 +3,10 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 
 const specs = [
-  { label: "Surface Area", value: "180m²" },
-  { label: "Energy Use", value: "15 kWh/m²" },
-  { label: "Solar Panels", value: "40 m²" },
-  { label: "Carbon Balance", value: "-20%" },
+  { label: "Área Projetada", value: "180m²" },
+  { label: "Eficiência Térmica", value: "A+" },
+  { label: "Painéis Solares", value: "40m²" },
+  { label: "Redução de CO₂", value: "-20%" },
 ];
 
 export function EditorialSection() {
@@ -16,14 +16,14 @@ export function EditorialSection() {
 
   const updateParallax = useCallback(() => {
     if (!videoRef.current) return;
-    
+
     const rect = videoRef.current.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    
+
     // Calculate when video enters and exits viewport
     const videoTop = rect.top;
     const videoBottom = rect.bottom;
-    
+
     // Progress from 0 (entering viewport) to 1 (exiting viewport)
     if (videoBottom > 0 && videoTop < windowHeight) {
       const progress = 1 - (videoTop + rect.height / 2) / (windowHeight + rect.height);
@@ -41,7 +41,7 @@ export function EditorialSection() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     updateParallax();
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (rafRef.current) {
@@ -56,12 +56,12 @@ export function EditorialSection() {
   return (
     <section className="bg-background">
       {/* Newsletter Banner */}
-      
+
 
       {/* Decorative Icons */}
       <div className="flex items-center justify-center gap-6 pb-20">
-        
-        
+
+
       </div>
 
       {/* Full-width Video with Parallax */}
