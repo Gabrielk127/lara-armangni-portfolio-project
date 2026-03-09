@@ -145,7 +145,7 @@ export function TechnologySection() {
   const grayscaleAmount = Math.round((1 - textProgress) * 100);
 
   return (
-    <section ref={sectionRef} className="relative bg-foreground">
+    <section ref={sectionRef} className="relative bg-black">
       {/* Sticky container for scroll animation */}
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="flex h-full w-full items-center justify-center">
@@ -233,7 +233,7 @@ export function TechnologySection() {
                 }}
               />
 
-              <div className="absolute inset-0 bg-foreground/40" />
+              <div className="absolute inset-0 bg-black/40" />
 
               {/* Title Text - Cycles through 3 texts with blur effect */}
               <div

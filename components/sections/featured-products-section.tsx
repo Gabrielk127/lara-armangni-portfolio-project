@@ -52,9 +52,9 @@ export function FeaturedProductsSection() {
         {/* Bento Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full max-w-7xl mx-auto auto-rows-[180px] md:auto-rows-[220px]">
           {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className={`relative overflow-hidden rounded-lg border border-gray-200 ${feature.span}`}
+            <div
+              key={index}
+              className={`relative overflow-hidden rounded-lg border border-border ${feature.span}`}
             >
               <FadeImage
                 src={feature.image || "/placeholder.svg"}

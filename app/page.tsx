@@ -14,14 +14,15 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Header />
       <HeroSection />
+      <TestimonialsSection />
+      <CollectionSection />
       {/* <PhilosophySection /> */}
       <FeaturedProductsSection />
       <TechnologySection />
       <GallerySection />
-      <CollectionSection />
       <EditorialSection />
-      <TestimonialsSection />
       <FooterSection />
     </main>
   );
+
 }

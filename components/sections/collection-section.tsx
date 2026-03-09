@@ -1,21 +1,24 @@
 "use client";
 
+import Link from "next/link";
 import { FadeImage } from "@/components/fade-image";
 
 const accessories = [
   {
     id: 1,
-    name: "Residência Compacta",
-    description: "120m² de área útil com eficiência energética otimizada",
-    price: "Projeto Conceitual",
-    image: "/images/hero-side-1.png",
+    name: "Residência Cacique",
+    description: "Arquitetura contemporânea com integração à natureza",
+    price: "2025",
+    image: "/images/projects/render-cacique/cacique-01.png",
+    href: "/projetos/residencia-cacique",
   },
   {
     id: 2,
-    name: "Habitação Contemporânea",
-    description: "180m² equilíbrando amplitude e sustentabilidade",
-    price: "Projeto Executivo",
-    image: "/images/hero-side-2.png",
+    name: "Residência Paola Oliveira",
+    description: "Elegância e funcionalidade em harmonia",
+    price: "2025",
+    image: "/images/projects/renders-paola-oliveira/paola-01.png",
+    href: "/projetos/residencia-paola-oliveira",
   },
   {
     id: 3,
@@ -23,6 +26,7 @@ const accessories = [
     description: "250m² de design expansivo com máximo conforto",
     price: "Projeto Premiado",
     image: "/images/hero-side-4.png",
+    href: "#",
   },
 ];
 
@@ -41,15 +45,21 @@ export function CollectionSection() {
         {/* Mobile: Horizontal Carousel */}
         <div className="flex gap-6 overflow-x-auto px-6 pb-4 md:hidden snap-x snap-mandatory scrollbar-hide">
           {accessories.map((accessory) => (
-            <div key={accessory.id} className="group flex-shrink-0 w-[75vw] snap-center">
+            <Link
+              key={accessory.id}
+              href={accessory.href}
+              className="group flex-shrink-0 w-[75vw] snap-center"
+            >
               {/* Image */}
               <div className="relative aspect-[2/3] overflow-hidden rounded-2xl bg-secondary">
                 <FadeImage
                   src={accessory.image || "/placeholder.svg"}
                   alt={accessory.name}
                   fill
-                  className="object-cover group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
 
               {/* Content */}
@@ -68,22 +78,24 @@ export function CollectionSection() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* Desktop: Grid */}
         <div className="hidden md:grid md:grid-cols-3 gap-8 md:px-12 lg:px-20">
           {accessories.map((accessory) => (
-            <div key={accessory.id} className="group">
+            <Link key={accessory.id} href={accessory.href} className="group">
               {/* Image */}
               <div className="relative aspect-[2/3] overflow-hidden rounded-2xl bg-secondary">
                 <FadeImage
                   src={accessory.image || "/placeholder.svg"}
                   alt={accessory.name}
                   fill
-                  className="object-cover group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
 
               {/* Content */}
@@ -102,7 +114,7 @@ export function CollectionSection() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -7,26 +7,26 @@ import { useEffect, useRef, useState } from "react";
 
 const sideImages = [
   {
-    src: "/images/hero-side-1.png",
-    alt: "Arquitetura moderna com estrutura em aço corten",
+    src: "/images/projects/render-cacique/cacique-01.png",
+    alt: "Residência Cacique — vista frontal",
     position: "left",
     span: 1,
   },
   {
-    src: "/images/hero-side-2.png",
-    alt: "Vista aérea de residência contemporânea",
+    src: "/images/projects/render-cacique/cacique-08.png",
+    alt: "Residência Cacique — vista noturna",
     position: "left",
     span: 1,
   },
   {
-    src: "/images/hero-side-3.png",
-    alt: "Vista interna com integração à paisagem",
+    src: "/images/projects/renders-paola-oliveira/paola-01.png",
+    alt: "Residência Paola Oliveira — fachada principal",
     position: "right",
     span: 1,
   },
   {
-    src: "/images/hero-side-4.png",
-    alt: "Arquitetura contemporânea ao entardecer",
+    src: "/images/projects/renders-paola-oliveira/paola-08.png",
+    alt: "Residência Paola Oliveira — vista noturna",
     position: "right",
     span: 1,
   },
@@ -131,13 +131,13 @@ export function HeroSection() {
                 style={{ opacity: textOpacity }}
               >
                 <p
-                  className="animate-[slideUp_0.6s_ease-out_forwards] opacity-0 whitespace-nowrap text-[1.6vw] font-light tracking-[0.5em] uppercase text-black"
+                  className="animate-[slideUp_0.6s_ease-out_forwards] opacity-0 whitespace-nowrap text-[1.6vw] font-light tracking-[0.5em] uppercase text-zinc-200"
                   style={{ animationDelay: '0s' }}
                 >
                   portfolio
                 </p>
                 <h1
-                  className="animate-[slideUp_0.8s_ease-out_forwards] opacity-0 whitespace-nowrap text-[8vw] font-bold leading-[0.9] tracking-tight text-black"
+                  className="animate-[slideUp_0.8s_ease-out_forwards] opacity-0 whitespace-nowrap text-[8vw] font-bold leading-[0.9] tracking-tight text-white"
                   style={{ animationDelay: '0.15s' }}
                 >
                   Lara Armangni
@@ -145,7 +145,8 @@ export function HeroSection() {
               </div>
 
               <Image
-                src="/images/hero-mono.png"
+                // src="/images/hero-mono.png"
+                src="/images/projects/renders-paola-oliveira/paola-06.png"
                 alt="Estrutura arquitetônica moderna com reflexo"
                 fill
                 className="absolute inset-0 z-10 object-cover"
