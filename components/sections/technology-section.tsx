@@ -14,9 +14,9 @@ function ScrollRevealText({ text }: { text: string }) {
       const rect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Slower animation - more viewport range
-      const startOffset = windowHeight * 0.9;
-      const endOffset = windowHeight * 0.1;
+      // Faster reveal - tighter viewport range
+      const startOffset = windowHeight * 0.85;
+      const endOffset = windowHeight * 0.35;
 
       const totalDistance = startOffset - endOffset;
       const currentPosition = startOffset - rect.top;
@@ -39,8 +39,8 @@ function ScrollRevealText({ text }: { text: string }) {
       className="text-3xl font-semibold leading-snug text-white md:text-4xl lg:text-5xl"
     >
       {words.map((word, index) => {
-        // Calculate blur and opacity based on scroll progress
-        const appearProgress = progress * (words.length + 1);
+        // Calculate blur and opacity based on scroll progress — faster reveal
+        const appearProgress = progress * (words.length + 3);
         const wordAppearProgress = Math.max(0, Math.min(1, appearProgress - index));
         const wordOpacity = wordAppearProgress;
         const wordBlur = (1 - wordAppearProgress) * 40;
@@ -89,7 +89,7 @@ export function TechnologySection() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [textProgress, setTextProgress] = useState(0);
 
-  const descriptionText = "Arquitetura passiva que reimagina o habitar contemporâneo. Vidro triplo, isolamento reforçado e ventilação natural combinam-se a painéis solares para criar uma edificação energeticamente autônoma. Materiais biossustentáveis como madeira maciça e lã de cânhamo garantem qualidade do ar interior e mínimo impacto ecológico.";
+  const descriptionText = "Cada projeto nasce da escuta atenta — entender quem vai habitar o espaço, como vive, o que sonha. Busco criar ambientes que conectam pessoas, luz natural e paisagem, aliando rigor técnico a uma estética contemporânea. Meu processo combina modelagem tridimensional, renderização realista e atenção à materialidade para comunicar cada detalhe antes da construção.";
 
   useEffect(() => {
     const handleScroll = () => {

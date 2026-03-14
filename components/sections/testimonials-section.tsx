@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
 
 const stats = [
-  { value: "5+", label: "Anos de experiência" },
-  { value: "30+", label: "Projetos desenvolvidos" },
-  { value: "3", label: "Premiações nacionais" },
+  { value: "4º", label: "Ano — Arq. e Urbanismo (UNIFIL)" },
+  { value: "9", label: "Meses — MEP Arquitetura" },
+  { value: "10+", label: "Softwares dominados" },
 ];
 
 // Bio text — all paragraphs joined into a single animated block
 const bioText =
-  "Sou Lara Armangni, arquiteta e urbanista formada pela Universidade de São Paulo (USP), com especialização em arquitetura sustentável pelo IFEN, França. Cresci rodeada por livros de arte e canteiros de obras — e foi nesse encontro entre o sensível e o técnico que encontrei minha vocação. Meu trabalho parte da escuta: cada projeto começa com uma conversa profunda sobre quem vai habitá-lo, como vive, o que sente. Acredito que o espaço é capaz de transformar rotinas e cultivar bem-estar. Por isso, projeto com atenção ao detalhe construtivo, à luz natural, à materialidade e ao entorno. Atuo em projetos residenciais, culturais e de interiores, sempre aliando rigor técnico a uma estética contemporânea e próxima ao território brasileiro.";
+  "Sou Lara Armangni Ferreira, estudante do 4º ano de Arquitetura e Urbanismo na UNIFIL, em Londrina. Acredito que a arquitetura transforma vidas — por isso busco unir estética, funcionalidade e sensibilidade em cada projeto. Com experiência na MEP Arquitetura e Planejamento, desenvolvi um olhar atento ao detalhe construtivo, à relação entre espaço e usuário e à materialidade dos ambientes. Possuo inglês fluente, domínio de ferramentas como AutoCAD, SketchUp, ArchiCAD, Twinmotion, D5 e Photoshop, além de forte pensamento lógico-espacial e facilidade para trabalhar em equipe. Viagens de estudos por Curitiba, Paranaguá, Minas Gerais e Brasília ampliaram minha visão sobre patrimônio, urbanismo e a diversidade da arquitetura brasileira.";
 
 export function TestimonialsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -39,8 +39,8 @@ export function TestimonialsSection() {
       const descTop = descRect.top;
       const descHeight = descRect.height;
 
-      const startTrigger = windowHeight * 0.8;
-      const endTrigger = windowHeight * 0.2;
+      const startTrigger = windowHeight * 0.95;
+      const endTrigger = windowHeight * 0.15;
 
       if (descTop < startTrigger && descTop > endTrigger - descHeight) {
         const progress = Math.max(
@@ -91,7 +91,7 @@ export function TestimonialsSection() {
             <div className="absolute -inset-3 border border-border" />
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <Image
-                src="/images/lara-profile.png"
+                src="/images/lara-profile.jpg"
                 alt="Lara Armangni — Arquiteta"
                 fill
                 className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
@@ -122,12 +122,12 @@ export function TestimonialsSection() {
               <em className="not-italic text-muted-foreground">conta histórias</em>
             </h2>
 
-            {/* ── Bio com efeito palavra a palavra (igual ao PhilosophySection) ── */}
+            {/* ── Bio com efeito palavra a palavra ── */}
             <div ref={bioRef} className="text-base leading-relaxed text-muted-foreground">
               {bioWords.map((word, index) => {
                 const wordProgress = Math.max(
                   0,
-                  Math.min(1, descriptionProgress * bioWords.length - index)
+                  Math.min(1, descriptionProgress * (bioWords.length + 10) - index)
                 );
                 const opacity = wordProgress;
                 const blur = (1 - wordProgress) * 40;

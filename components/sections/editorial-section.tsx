@@ -3,10 +3,12 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 
 const specs = [
-  { label: "Área Projetada", value: "180m²" },
-  { label: "Eficiência Térmica", value: "A+" },
-  { label: "Painéis Solares", value: "40m²" },
-  { label: "Redução de CO₂", value: "-20%" },
+  { label: "Projeto 2D", value: "AutoCAD" },
+  { label: "Modelagem 3D", value: "SketchUp" },
+  { label: "BIM", value: "ArchiCAD" },
+  { label: "Renderização", value: "Twinmotion" },
+  { label: "Render Realista", value: "D5" },
+  { label: "Pós-Produção", value: "Photoshop" },
 ];
 
 export function EditorialSection() {
@@ -84,7 +86,7 @@ export function EditorialSection() {
       </div>
 
       {/* Specs Grid */}
-      <div className="grid grid-cols-2 border-t border-border md:grid-cols-4">
+      <div className="grid grid-cols-2 border-t border-border md:grid-cols-3 lg:grid-cols-6">
         {specs.map((spec) => (
           <div
             key={spec.label}
@@ -93,7 +95,7 @@ export function EditorialSection() {
             <p className="mb-2 text-xs uppercase tracking-widest text-muted-foreground">
               {spec.label}
             </p>
-            <p className="font-medium text-foreground text-5xl">
+            <p className="font-medium text-foreground text-2xl lg:text-3xl">
               {spec.value}
             </p>
           </div>

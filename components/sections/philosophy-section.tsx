@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
 
 const titles = [
-  "Arquitetura Sustentável.",
-  "Projetado para Durar.",
-  "Consciente e Responsivo.",
+  "Viagens de Estudo.",
+  "Semanas de Arquitetura.",
+  "Formação Contínua.",
 ];
 
 export function PhilosophySection() {
@@ -71,7 +71,7 @@ export function PhilosophySection() {
   }, [updateTransforms]);
 
   return (
-    <section id="products" className="bg-background">
+    <section id="formacao" className="bg-background">
       {/* Scroll-Animated Product Grid */}
       <div ref={sectionRef} className="relative" style={{ height: "200vh" }}>
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
@@ -145,7 +145,7 @@ export function PhilosophySection() {
         <div className="text-center">
 
           <p className="mt-8 leading-relaxed text-muted-foreground text-3xl text-center">
-            {("Sou Lara Armangni, estudante do 4º ano de Arquitetura e Urbanismo na Unifil, em Londrina. Acredito que a arquitetura é capaz de transformar vidas — por isso projeto espaços que unem estética, funcionalidade e responsabilidade com o meio ambiente.").split(" ").map((word, index, array) => {
+            {("Viagens acadêmicas por Curitiba, Paranaguá, Minas Gerais e Brasília somaram mais de 78 horas de imersão em patrimônio arquitetônico e urbanístico. Participei ativamente das Semanas de Arquitetura de 2023 e 2024 da UNIFIL, com mais de 20 palestras e oficinas sobre temas como Arquitetura Sensorial, Neuro Arquitetura, Biofilia, Iluminação, Arquitetura Cromática e Marketing Digital na Arquitetura. Essa vivência acadêmica se complementa com 9 meses de experiência profissional na MEP Arquitetura e Planejamento, em Londrina.").split(" ").map((word, index, array) => {
               const wordProgress = Math.max(0, Math.min(1, (descriptionProgress * array.length) - index));
               const opacity = wordProgress;
               const blur = (1 - wordProgress) * 40;

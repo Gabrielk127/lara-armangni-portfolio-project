@@ -10,10 +10,10 @@ const footerLinks = {
     { label: "Trabalhos", href: "#accessories" },
   ],
   about: [
-    { label: "Sobre Mim", href: "#" },
-    { label: "Formação", href: "#" },
-    { label: "Experiência", href: "#" },
-    { label: "Contato", href: "#" },
+    { label: "Sobre Mim", href: "#about" },
+    { label: "Formação", href: "#formacao" },
+    { label: "Experiência", href: "#formacao" },
+    { label: "Contato", href: "mailto:lara@laraarmangni.com.br" },
   ],
   service: [
     { label: "CV", href: "#" },
@@ -32,7 +32,7 @@ export function FooterSection() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1 lg:col-span-2">
             <Link href="#hero" className="text-lg font-medium text-foreground">
-              MONO
+              Lara Armangni
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Portfólio de arquitetura e urbanismo. Projetos contemporâneos com foco em sustentabilidade, estética e funcionalidade.
@@ -113,13 +113,7 @@ export function FooterSection() {
               href="#"
               className="text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
-              Twitter
-            </Link>
-            <Link
-              href="#"
-              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
-            >
-              YouTube
+              LinkedIn
             </Link>
           </div>
         </div>
